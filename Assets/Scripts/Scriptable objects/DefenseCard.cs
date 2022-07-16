@@ -5,11 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "defenseCard")]
 public class DefenseCard : Card
 {
-    public int attacksBlocked;
-    public int damageBlocked;
-
-    public override void Use()
+    public override void Use(CardHolder user, CardHolder opponent)
     {
-        
+
     }
 }

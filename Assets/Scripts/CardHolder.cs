@@ -4,23 +4,34 @@ using UnityEngine;
 
 public class CardHolder : MonoBehaviour
 {
-    List<Card> cardsInHand = new List<Card>();
-    List<Card> activeDefensiveCards = new List<Card>();
+    // simulate's the player's hand and also keeps track of defense cards played.
 
-    public void AddCardToHand(Card newCard)
+    List<GameObject> cardsInHand = new List<GameObject>();
+    public List<GameObject> activeDefensiveCards = new List<GameObject>();
+
+    [SerializeField] CardHolder opponent;
+
+    // Adding cards to the player's hand or using them
+    public void AddCardToHand(GameObject newCard)
     {
         cardsInHand.Add(newCard);
     }
 
-    public void ActivateDefensiveCard(Card newDefenseCard)
+    public void ActivateCard()
+    {
+        cardsInHand[1].GetComponent<Card>().Use(this, opponent);
+
+        cardsInHand.RemoveAt(1);
+    }
+
+    // defense cards
+    public void ActivateDefensiveCard(GameObject newDefenseCard)
     {
         activeDefensiveCards.Add(newDefenseCard);
     }
 
-    public void ActivateCard()
+    public void RemoveDefenseCard()
     {
-        cardsInHand[1].Use();
-
-        cardsInHand.RemoveAt(1);
+        activeDefensiveCards.RemoveAt(1);
     }
 }
