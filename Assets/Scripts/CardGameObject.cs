@@ -7,7 +7,7 @@ public class CardGameObject : MonoBehaviour
     // will hold all the information of an individual card and allow us to save them to a list in the card holder script
 
 
-    [SerializeField] Card cardStats;
+    [SerializeField] public Card cardStats;
     public int attacksBlocked = 0;
     public int damageBlocked = 0;
 

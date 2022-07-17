@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c35968ffe7a99e74cbefd2cda74e2b9b, type: 3}
-  m_Name: New Defense Card
+  m_Name: Void Wall
   m_EditorClassIdentifier: 
-  cardName: 
-  manaCost: 0
+  cardName: Void Wall
+  manaCost: 8
   cardType: 1
-  cardArt: {fileID: 0}
-  attacksBlocked: 0
-  damageBlocked: 0
+  cardArt: {fileID: 21300000, guid: d1a50f3f1543add44853f7c83f3d10ae, type: 3}
+  attacksBlocked: 3
+  damageBlocked: 3
   amountOfAttacks: 0
   damagePerAttack: 0
   armorPiercingDamage: 0

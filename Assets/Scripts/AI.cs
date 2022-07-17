@@ -9,7 +9,7 @@ public class AI : ReactionTest, IGamePhases
     [SerializeField] private float _constantCastingDelay;
     [SerializeField] private float _randomDelayFloor;
     [SerializeField] private float _randomDelayCeiling;
-
+    [SerializeField] private Health _health;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,6 @@ public class AI : ReactionTest, IGamePhases
                 {
                     _playerReactionTime = _timeSinceTriggered;
                 }
-                _visualIndicator.sprite = _faces[1];
                 _timeSinceTriggered += Time.deltaTime;
             }
 
