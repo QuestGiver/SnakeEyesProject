@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player : ReactionTest, IGamePhases
 {
+    public static ProcessSpells resolution; 
+    [SerializeField] public AI ai;
     [SerializeField] public CardHolder _hand;
     [SerializeField] private List<Dice> _dices = new List<Dice>();
     [SerializeField] private Image _visualIndicator;
@@ -20,7 +22,8 @@ public class Player : ReactionTest, IGamePhases
     // Update is called once per frame
     void Update()
     {
-        
+        CardPhase();
+        ReactionLogic();
     }
 
     public override void ReactionLogic()
@@ -34,7 +37,8 @@ public class Player : ReactionTest, IGamePhases
                 _trigger = true;
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    _playerReactionTime = _timeSinceTriggered;
+                    _ReactionTime = _timeSinceTriggered;
+                    resolution.ResolveConflict(_ReactionTime);
                 }
                 _visualIndicator.sprite = _faces[1];
                 _timeSinceTriggered += Time.deltaTime;
@@ -53,11 +57,22 @@ public class Player : ReactionTest, IGamePhases
 
     public void CardPhase()
     {
-        
+        int temp = 0;
+        foreach (var item in _dices)
+        {
+            if (item.Used)
+            { temp++; }
+        }
+        if (temp == _dices.Count)
+        {
+            ReactionPhase();
+        }
+
     }
 
     public void ReactionPhase()
     {
-        throw new System.NotImplementedException();
+        _startTest = true;
+        ai._startTest = true;
     }
 }

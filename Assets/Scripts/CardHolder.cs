@@ -6,7 +6,7 @@ public class CardHolder : MonoBehaviour
 {
     // simulate's the player's hand and also keeps track of defense cards played.
 
-    List<GameObject> cardsInHand = new List<GameObject>();
+    public List<GameObject> cardsInHand = new List<GameObject>();
     public List<GameObject> activeDefensiveCards = new List<GameObject>();
 
     [SerializeField] CardHolder opponent;
@@ -16,7 +16,7 @@ public class CardHolder : MonoBehaviour
     {
         cardsInHand.Add(newCard);
     }
-
+    
     public void ActivateCard()
     {
         cardsInHand[1].GetComponent<Card>().Use(this, opponent);

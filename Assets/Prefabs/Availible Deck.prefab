@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -97.04924, y: -93.90001}
+  m_AnchoredPosition: {x: 1.7679825, y: -92.83456}
   m_SizeDelta: {x: 96.7651, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1158455861202290098
@@ -271,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -97.81725, y: -168.06546}
+  m_AnchoredPosition: {x: 1, y: -167}
   m_SizeDelta: {x: 93.6345, y: 130.2709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2667950681963875024
@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61021257246174040bcb136f3da829e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diceSelection: {fileID: 0}
   card: {fileID: 0}
   _player: {fileID: 0}
 --- !u!114 &5239427958797253417
@@ -453,7 +454,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5239427958797253419}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5239427958797253418}
+        m_TargetAssemblyTypeName: CardInteractible, Assembly-CSharp
+        m_MethodName: AddCardToHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5239427958997633013
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61021257246174040bcb136f3da829e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diceSelection: {fileID: 0}
   card: {fileID: 0}
   _player: {fileID: 0}
 --- !u!114 &5239427959017625872
@@ -670,7 +684,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5239427959017625874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5239427959017625877}
+        m_TargetAssemblyTypeName: CardInteractible, Assembly-CSharp
+        m_MethodName: AddCardToHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5239427959275542120
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000010172, y: -65.5}
+  m_AnchoredPosition: {x: 1.768, y: -62.835}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5239427959275542119
@@ -789,7 +815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 107.8, y: 66.19998}
+  m_AnchoredPosition: {x: 39, y: 66.19998}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5239427959428457672
@@ -842,6 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61021257246174040bcb136f3da829e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diceSelection: {fileID: 0}
   card: {fileID: 0}
   _player: {fileID: 0}
 --- !u!114 &5239427959428457673
@@ -887,7 +914,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5239427959428457675}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5239427959428457674}
+        m_TargetAssemblyTypeName: CardInteractible, Assembly-CSharp
+        m_MethodName: AddCardToHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5239427959811078436
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.999992, y: 66.2}
+  m_AnchoredPosition: {x: 108.699974, y: 66.19997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5239427959811078432
@@ -980,6 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61021257246174040bcb136f3da829e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diceSelection: {fileID: 0}
   card: {fileID: 0}
   _player: {fileID: 0}
 --- !u!114 &5239427959811078433
@@ -1025,7 +1065,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5239427959811078435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5239427959811078434}
+        m_TargetAssemblyTypeName: CardInteractible, Assembly-CSharp
+        m_MethodName: AddCardToHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5239427959946066695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000050861, y: -64.8}
+  m_AnchoredPosition: {x: 0.0000076294, y: -63.337}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5239427960820551757
@@ -1501,7 +1553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99.73331, y: -93.90003}
+  m_AnchoredPosition: {x: -1.1006775, y: -93.336555}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5231377719633106094
@@ -1580,7 +1632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98.834, y: -164.56348}
+  m_AnchoredPosition: {x: -2, y: -164}
   m_SizeDelta: {x: 99.667, y: 125.0956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6061879342518859549

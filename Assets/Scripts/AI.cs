@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class AI : ReactionTest, IGamePhases
 {
-    [SerializeField] private CardHolder _hand;
-    [SerializeField] private List<Dice> _dices = new List<Dice>();
+    public List<GameObject> AllCardPrefabs;
+    [SerializeField] public CardHolder _hand;
     [SerializeField] private float _constantCastingDelay;
     [SerializeField] private float _randomDelayFloor;
     [SerializeField] private float _randomDelayCeiling;
     [SerializeField] private Health _health;
+    [SerializeField] private List<Dice> _dices = new List<Dice>();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (var item in _dices)
+        {
+            item.ForAIUse = true;
+        }
+        CardPhase();
     }
 
     // Update is called once per frame
@@ -34,7 +39,7 @@ public class AI : ReactionTest, IGamePhases
                 _trigger = true;
                 if (_timeSinceTriggered >= (_constantCastingDelay + Random.Range(_randomDelayFloor, _randomDelayCeiling)))
                 {
-                    _playerReactionTime = _timeSinceTriggered;
+                    _ReactionTime = _timeSinceTriggered;
                 }
                 _timeSinceTriggered += Time.deltaTime;
             }
@@ -44,19 +49,24 @@ public class AI : ReactionTest, IGamePhases
 
     public void DicePhase()
     {
-        foreach (Dice dice in _dices)
-        {
-            dice.RollTheDice();
-        }
+
     }
 
     public void CardPhase()
     {
-        throw new System.NotImplementedException();
+        for (int i = 0; i < 3; i++)
+        {
+            //Currently just simulate rolling the dice and buying a card, but it is NOT an accurate one
+            _hand.AddCardToHand(AllCardPrefabs[Random.Range(0, AllCardPrefabs.Count)]);
+            if (_hand.cardsInHand[i].GetComponent<Card>().manaCost > 6)
+            {
+                i++;
+            }
+        }
     }
 
     public void ReactionPhase()
     {
-        throw new System.NotImplementedException();
+        ReactionLogic();
     }
 }

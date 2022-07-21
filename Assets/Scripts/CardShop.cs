@@ -44,26 +44,9 @@ public class CardShop : MonoBehaviour
             _cardImages[i].sprite = AvailibleCardPrefabs[i].GetComponent<CardGameObject>().cardStats.cardArt;
             _cardNames[i].text = AvailibleCardPrefabs[i].GetComponent<CardGameObject>().cardStats.cardName;
             _cardInfo[i].text = AvailibleCardPrefabs[i].GetComponent<CardGameObject>().cardStats.CardInfo();
-            _cardCosts[i].text = AvailibleCardPrefabs[i].GetComponent<CardGameObject>().cardStats.ToString();
+            _cardCosts[i].text = AvailibleCardPrefabs[i].GetComponent<CardGameObject>().cardStats.manaCost.ToString();
             _cardInteractibles[i].card = AvailibleCardPrefabs[i];          
         }
     }
-
-
-    public void SetCardImage(int index, Sprite sprite)
-    {
-        _cardImages[index].sprite = sprite;
-    }
-
-    public void SetCardName(int index, string name)
-    {
-        _cardNames[index].text = name;
-    }
-
-    public void SetCardInfo(int index, string info)
-    {
-        _cardInfo[index].text = info;
-    }
-
     
 }
