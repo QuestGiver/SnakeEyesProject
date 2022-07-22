@@ -44,7 +44,8 @@ public class Dice : MonoBehaviour
     }
 
     private void Update()
-    {
+    {//replace with a state machine. In fact, replace the entire UI system with a state machine.
+        
 
         if (_isRolling)
         {

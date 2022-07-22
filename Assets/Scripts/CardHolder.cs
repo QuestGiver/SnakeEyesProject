@@ -19,9 +19,9 @@ public class CardHolder : MonoBehaviour
     
     public void ActivateCard()
     {
-        cardsInHand[1].GetComponent<Card>().Use(this, opponent);
+        cardsInHand[0].GetComponent<Card>().Use(this, opponent);
 
-        cardsInHand.RemoveAt(1);
+        cardsInHand.RemoveAt(0);
     }
 
     // defense cards
@@ -32,6 +32,6 @@ public class CardHolder : MonoBehaviour
 
     public void RemoveDefenseCard()
     {
-        activeDefensiveCards.RemoveAt(1);
+        activeDefensiveCards.RemoveAt(0);
     }
 }

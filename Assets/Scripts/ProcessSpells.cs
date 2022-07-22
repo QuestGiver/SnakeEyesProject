@@ -25,10 +25,30 @@ public class ProcessSpells : MonoBehaviour
         
     }
 
+
+    //This is a high level method which is supposed to contain the order of operations for:
+    //resolving the duel and ticking the right triggers for animation, sounds, and effects.
+    //This function should only be triggered by player commands and this should be invisible to AI.
     public void ResolveConflict(float _reactionTime)
     {
-
-
+        for (int i = 0; i < Mathf.Max(player._hand.cardsInHand.Count, ai._hand.cardsInHand.Count); i++)
+        {
+            //if both the player and ai have a non-null card during the current iteration execute logic
+            if (ai._hand.cardsInHand[i] != null && player._hand.cardsInHand[i] != null)
+            {
+                ai._hand.ActivateCard();
+                player._hand.ActivateCard();
+            }
+            else if ((ai._hand.cardsInHand[i] != null))
+            {
+                ai._hand.ActivateCard();
+            }
+            else if ((player._hand.cardsInHand[i] != null))
+            {
+                player._hand.ActivateCard();
+            }
+            
+        }
     }
     
     float CalculateReactionSpeedBonus(float _reactionTime)
