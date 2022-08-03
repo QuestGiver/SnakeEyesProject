@@ -38,7 +38,8 @@ public class Player : ReactionTest, IGamePhases
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     _ReactionTime = _timeSinceTriggered;
-                    resolution.ResolveConflict(_ReactionTime);
+                    resolution.PlayerResolveConflict();
+                    resolution.PlayerResolveConflict();
                 }
                 _visualIndicator.sprite = _faces[1];
                 _timeSinceTriggered += Time.deltaTime;

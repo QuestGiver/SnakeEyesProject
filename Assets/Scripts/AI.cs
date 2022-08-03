@@ -5,6 +5,7 @@ using UnityEngine;
 public class AI : ReactionTest, IGamePhases
 {
     public List<GameObject> AllCardPrefabs;
+    public SpellProcessing resolution;
     [SerializeField] public CardHolder _hand;
     [SerializeField] private float _constantCastingDelay;
     [SerializeField] private float _randomDelayFloor;
@@ -25,7 +26,7 @@ public class AI : ReactionTest, IGamePhases
     // Update is called once per frame
     void Update()
     {
-        
+        ReactionPhase();
     }
 
     public override void ReactionLogic()
@@ -40,6 +41,7 @@ public class AI : ReactionTest, IGamePhases
                 if (_timeSinceTriggered >= (_constantCastingDelay + Random.Range(_randomDelayFloor, _randomDelayCeiling)))
                 {
                     _ReactionTime = _timeSinceTriggered;
+                    resolution.AIResolvesConflict();
                 }
                 _timeSinceTriggered += Time.deltaTime;
             }
@@ -64,7 +66,7 @@ public class AI : ReactionTest, IGamePhases
             _hand.AddCardToHand(AllCardPrefabs[Random.Range(0, AllCardPrefabs.Count)]);
             if ((_hand.cardsInHand[i].GetComponent<CardGameObject>().cardStats.manaCost > 6) && ((i + 1) !> 3))
             {
-                i++;
+                break;
             }
         }
     }

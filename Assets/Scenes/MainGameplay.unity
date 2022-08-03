@@ -1538,6 +1538,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1262586542}
     - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: resolution
+      value: 
+      objectReference: {fileID: 856660820}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: _TimeUntilTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
       propertyPath: _randomDelayFloor
       value: -0.05
       objectReference: {fileID: 0}

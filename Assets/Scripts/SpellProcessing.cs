@@ -9,7 +9,6 @@ public class SpellProcessing : MonoBehaviour
     public AI ai;
     public Image PlayerSpell;
     public Image AISpell;
-    public float ReactionBonusTolerance = 0.5f;
 
 
 
@@ -26,31 +25,24 @@ public class SpellProcessing : MonoBehaviour
     }
 
       
-    //This is a high level method which is supposed to contain the order of operations for:
-    //resolving the duel and ticking the right triggers for animation, sounds, and effects.
-    //This function should only be triggered by player commands and this should be invisible to AI. Hopefully.
-    public void ResolveConflict(float _reactionTime)
+    //This is a high level method which is supposed to contain the order of operations for
+    //resolving the duel
+    public void PlayerResolveConflict()
     {
-        for (int i = 0; i < Mathf.Max(player._hand.cardsInHand.Count, ai._hand.cardsInHand.Count); i++)
+        for (int i = 0; i < player._hand.cardsInHand.Count; i++)
         {
-            //if both the player and ai have a card during the current iteration execute logic
-            if (ai._hand.cardsInHand.Count > i)
-            {
-                ai._hand.ActivateCard();
-            }
-            
-            if (player._hand.cardsInHand.Count > i)
-            {
-                player._hand.ActivateCard();
-            }
-            
+            player._hand.ActivateCard();
+            Debug.Log("activated player card");
         }
     }
-    
-    float CalculateReactionSpeedBonus(float _reactionTime)
+
+    public void AIResolvesConflict()
     {
-        //returns a value between 1 and zero that is higher the closer the reaction time is to 0
-        return 1 - Mathf.Clamp01(_reactionTime / ReactionBonusTolerance);
+        for (int i = 0; i < ai._hand.cardsInHand.Count; i++)
+        {
+            ai._hand.ActivateCard();
+            Debug.Log("activated ai card");
+        }
     }
 
 }
