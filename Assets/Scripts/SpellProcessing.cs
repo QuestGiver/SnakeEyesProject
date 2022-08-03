@@ -33,17 +33,13 @@ public class SpellProcessing : MonoBehaviour
     {
         for (int i = 0; i < Mathf.Max(player._hand.cardsInHand.Count, ai._hand.cardsInHand.Count); i++)
         {
-            //if both the player and ai have a non-null card during the current iteration execute logic
-            if (ai._hand.cardsInHand[i] != null && player._hand.cardsInHand[i] != null)      
-            {
-                ai._hand.ActivateCard();
-                player._hand.ActivateCard();
-            }
-            else if ((ai._hand.cardsInHand[i] != null))
+            //if both the player and ai have a card during the current iteration execute logic
+            if (ai._hand.cardsInHand.Count > i)
             {
                 ai._hand.ActivateCard();
             }
-            else if ((player._hand.cardsInHand[i] != null))
+            
+            if (player._hand.cardsInHand.Count > i)
             {
                 player._hand.ActivateCard();
             }

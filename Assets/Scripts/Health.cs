@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    int maxHp = 5;
-    int curHp;
+    [SerializeField]int maxHp = 5;
+    [SerializeField]int curHp;
     CardHolder myCardHolder;
 
     private void Start()
@@ -49,6 +49,7 @@ public class Health : MonoBehaviour
             // calculate the damage
             actualDamage = attacker.damagePerAttack - actualArmorValue;
             curHp -= actualDamage;
+            Debug.Log(actualDamage);
 
         }
     }
