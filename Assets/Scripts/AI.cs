@@ -34,7 +34,7 @@ public class AI : ReactionTest, IGamePhases
         {
             //count down from timeToTrigger
             _TimeUntilTrigger -= Time.deltaTime;
-            if (_TimeUntilTrigger <= 0)//if time to trigger is zero, get players reaction time
+            if (_TimeUntilTrigger <= 0)
             {
                 _trigger = true;
                 if (_timeSinceTriggered >= (_constantCastingDelay + Random.Range(_randomDelayFloor, _randomDelayCeiling)))
@@ -54,11 +54,15 @@ public class AI : ReactionTest, IGamePhases
 
     public void CardPhase()
     {
+        if (AllCardPrefabs.Count == 0)
+        {
+            Debug.LogWarning("AI has no card prefabs");
+        }
         for (int i = 0; i < 3; i++)
         {
             //Currently just simulate rolling the dice and buying a card, but it is NOT an accurate one
             _hand.AddCardToHand(AllCardPrefabs[Random.Range(0, AllCardPrefabs.Count)]);
-            if (_hand.cardsInHand[i].GetComponent<Card>().manaCost > 6)
+            if (_hand.cardsInHand[i].GetComponent<CardGameObject>().cardStats.manaCost > 6)
             {
                 i++;
             }

@@ -44,7 +44,7 @@ public class Dice : MonoBehaviour
     }
 
     private void Update()
-    {//replace with a state machine. In fact, replace the entire UI system with a state machine.
+    {//replace with a state machine. In fact, replace the entire UI system with a state machine. This really should not be in the Dice script.
         
 
         if (_isRolling)

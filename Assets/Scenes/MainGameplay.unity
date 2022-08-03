@@ -1549,6 +1549,34 @@ PrefabInstance:
       propertyPath: _constantCastingDelay
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: AllCardPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: AllCardPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8173143408803483631, guid: 2aedfe38c510f2642aa23630ab852fb7, type: 3}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: AllCardPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8337378624945538889, guid: d5dda45b697ed0c4c9375b42c5015190, type: 3}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: AllCardPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 632970305750392813, guid: 69112b7de1d3fce4b8f4706416edfdaf, type: 3}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: AllCardPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 5461520932337297086, guid: 5a1d7e0c1f07e7e4fba703ca78db8451, type: 3}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: AllCardPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 4988479229416727351, guid: 5d1a2a3c4f532e147b1c936779932a30, type: 3}
+    - target: {fileID: 4678536450584058791, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
+      propertyPath: AllCardPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 2076881842971795531, guid: 38fa28bd6c2ffdb479d26cb6fa39d72d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb91cef817a5d6c49a513d516c374330, type: 3}
 --- !u!1001 &4884286030007684895
@@ -1814,9 +1842,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1429672224}
     - target: {fileID: 6343942614293734501, guid: e5fbcfba0aac5a949b3725a9adabffd4, type: 3}
+      propertyPath: resolution
+      value: 
+      objectReference: {fileID: 856660820}
+    - target: {fileID: 6343942614293734501, guid: e5fbcfba0aac5a949b3725a9adabffd4, type: 3}
       propertyPath: _visualIndicator
       value: 
       objectReference: {fileID: 187694473}
+    - target: {fileID: 6343942614293734501, guid: e5fbcfba0aac5a949b3725a9adabffd4, type: 3}
+      propertyPath: _TimeUntilTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6343942614293734501, guid: e5fbcfba0aac5a949b3725a9adabffd4, type: 3}
       propertyPath: _dices.Array.data[0]
       value: 

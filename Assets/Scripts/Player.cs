@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : ReactionTest, IGamePhases
 {
-    public static ProcessSpells resolution; 
+    public SpellProcessing resolution; 
     [SerializeField] public AI ai;
     [SerializeField] public CardHolder _hand;
     [SerializeField] private List<Dice> _dices = new List<Dice>();
@@ -43,7 +43,6 @@ public class Player : ReactionTest, IGamePhases
                 _visualIndicator.sprite = _faces[1];
                 _timeSinceTriggered += Time.deltaTime;
             }
-
         }
     }
 

@@ -19,7 +19,7 @@ public class CardHolder : MonoBehaviour
     
     public void ActivateCard()
     {
-        cardsInHand[0].GetComponent<Card>().Use(this, opponent);
+        cardsInHand[0].GetComponent<CardGameObject>().cardStats.Use(this, opponent);
 
         cardsInHand.RemoveAt(0);
     }
