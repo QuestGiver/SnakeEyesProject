@@ -6,6 +6,9 @@ public class CardHolder : MonoBehaviour
 {
     // simulate's the player's hand and also keeps track of defense cards played.
 
+
+    
+
     public List<GameObject> cardsInHand = new List<GameObject>();
     public List<GameObject> activeDefensiveCards = new List<GameObject>();
 
@@ -15,13 +18,22 @@ public class CardHolder : MonoBehaviour
     public void AddCardToHand(GameObject newCard)
     {
         cardsInHand.Add(newCard);
+        if (cardsInHand.Count != 0)
+        {
+            ConflictResolution.totalCardsInPlay++;
+        }
+
     }
     
-    public void ActivateCard()
+    public CardGameObject ActivateCard()
     {
-        cardsInHand[0].GetComponent<CardGameObject>().cardStats.Use(this, opponent);
+        CardGameObject temp = cardsInHand[0].GetComponent<CardGameObject>();
+
+        temp.cardStats.Use(this, opponent);
 
         cardsInHand.RemoveAt(0);
+
+        return temp;
     }
 
     // defense cards

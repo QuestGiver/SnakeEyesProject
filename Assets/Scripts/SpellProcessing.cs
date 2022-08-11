@@ -9,7 +9,7 @@ public class SpellProcessing : MonoBehaviour
     public AI ai;
     public Image PlayerSpell;
     public Image AISpell;
-
+    public ConflictResolution conflictResolution;
 
 
     // Start is called before the first frame update
@@ -31,18 +31,33 @@ public class SpellProcessing : MonoBehaviour
     {
         for (int i = 0; i < player._hand.cardsInHand.Count; i++)
         {
-            player._hand.ActivateCard();
+            conflictResolution.AddToExecutionOrder(player._hand.ActivateCard());
             Debug.Log("activated player card");
         }
+        CheckForSpentHands();
     }
 
     public void AIResolvesConflict()
     {
         for (int i = 0; i < ai._hand.cardsInHand.Count; i++)
         {
-            ai._hand.ActivateCard();
+            conflictResolution.AddToExecutionOrder(ai._hand.ActivateCard());
             Debug.Log("activated ai card");
         }
+        CheckForSpentHands();
     }
+
+    void CheckForSpentHands()
+    {
+        //if both the Ai and Player hands are empty and the ExecutionOrder is not empty, activate DisplayCardUsage()
+        if (player._hand.cardsInHand.Count == 0 && ai._hand.cardsInHand.Count == 0)
+        {
+            if (!conflictResolution.ExecutionOrderEmpty())
+            {
+                conflictResolution.DisplayCardUsage();
+            }
+        }
+    }
+
 
 }
